@@ -22,7 +22,7 @@ then:
         }
         body(
                 teacherId: '8jk4l-k0d9ie7-4jk89l-t88ijj6-h8i9040',
-                blankQuizzes: [
+                quizzes: [
                         [
                                 id   : '8jk4l-k0d9ie7-4jk89l-t88ijj6-h8ijsl1',
                                 score: 5
@@ -52,8 +52,9 @@ then:
         )
         bodyMatchers {
             jsonPath('$.teacherId', byRegex('[a-zA-Z-0-9]{36}'))
-            jsonPath("\$.['blankQuizzes'].['id']", byRegex('[a-zA-Z-0-9]{36}'))
-            jsonPath("\$.['blankQuizzes'].['score']", byRegex('100|[1-9][0-9]|[1-9]'))
+            jsonPath("\$.['quizzes'].['id']", byRegex('[a-zA-Z-0-9]{36}'))
+            jsonPath('$.quizzes', byType {minOccurrence(5)})
+            jsonPath("\$.['quizzes'].['score']", byRegex('100|[1-9][0-9]|[1-9]'))
         }
     }
 
