@@ -15,11 +15,11 @@ then:
 '''
 
     request {
-        url $(consumer("/examinations/${regex('[a-zA-Z-0-9]{36}')}/answer-sheets/${regex('[a-zA-Z-0-9]{36}')}"),
-                producer("/examinations/9idk4-lokfu-jr874j3-h8d9j4-hor82kd77/answer-sheet/9idk4-lokfu-jr874j3-h8d9j4-ho7kdl009"))
+        url $(consumer("/examinations/${regex('[a-zA-Z-0-9]{36}')}/answer-sheets/9idk4-lokfu-jr874j3-u8d9j4-hor82kd77"),
+                producer("/examinations/9idk4-lokfu-jr874j3-h8d9j4-hor82kd77/answer-sheet/9idk4-lokfu-jr874j3-u8d9j4-hor82kd77"))
         method PUT()
         body(
-                studentId: regex('8jk4l-k0d9ie7-4jk89l-t88ijj6-h8i9040'),
+                studentId: '8jk4l-k0d9ie7-4jk89l-t88ijj6-h8i9040',
                 answer: anyNonBlankString(),
                 startedTime: '2020-06-27T09:00:00',
                 submittedTime: '2020-06-27T10:30:00',
